@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jingtum.chainApp.mapper.WalletMapper">
+  <select id="selectWallet" resultType="com.jingtum.chainApp.entity.WalletEntity">
+  		select address,secret,account,pwd,username,DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%s') as createTime,walletType,isActivity from t_wallet 
+  			where account=#{account}
+  </select>
+  <select id="selectAllWallet" resultType="com.jingtum.chainApp.entity.WalletEntity">
+  		select address,secret,account,pwd,username,DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%s') as createTime,walletType,isActivity from t_wallet 
+  			where walletType=0 order by createTime desc
+  </select>
+  <update id="updateWalletActivity" parameterType="java.lang.String" >
+      update t_wallet set isActivity=1 where address=#{address}
+  </update>
+  <insert id="insertToWallet" parameterType="com.jingtum.chainApp.entity.WalletEntity"  keyProperty="address">
+      insert into t_wallet set address=#{address},secret=#{secret},account=#{account},pwd=#{pwd}
+      	,userName=#{userName},createTime=now(),walletType=#{walletType}
+   </insert>
+   
+   <insert id="insertToTransaction" parameterType="com.jingtum.chainApp.entity.ClientTransactionEntity"  keyProperty="clientId">
+      insert into t_transaction set  clientId=#{clientId},payAddress=#{payAddress},toAddress=#{toAddress},
+      currency=#{currency},currencyValue=#{currencyValue},transactionType=#{transactionType},memos=#{memos}
+      ,payTime=now(),hash=#{hash},fee=#{fee},filePath=#{filePath}     
+   </insert>
+</mapper>

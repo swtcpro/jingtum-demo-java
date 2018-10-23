@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.4.5/themes/default/easyui.css"/>
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.4.5/themes/icon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/txtChain.css"/>
+	<script type="text/javascript" src="jquery-easyui-1.5.4.5/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.5.4.5/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.5.4.5/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/txtChain.js"></script>
+</head>
+<body>
+	<!-- 布局 -->
+    <div class="easyui-layout" fit="true">
+     	<div data-options="region:'north',border:true" style="height:100px;padding:10px 0px 0px 0px;">
+	 		&nbsp;&nbsp;&nbsp;&nbsp;
+	 		<textarea rows="4" cols="100" id="txtTotrain" placeholder="输入要上链的文本"></textarea>
+	 		<button id="btnTotrain">上链</button>
+	 	</div>
+	 	<div data-options="region:'center',border:false" style="padding-top:0px;">
+	 		<table id="gridTxt"></table>
+	 	</div>
+ 	</div>
+ 	
+	<div id="divShowData" class="easyui-window" title="区块链数据" data-options="modal:true,closed:true"
+		style="display:none;width:500px;height:400px;padding:5px;">
+		<div class="txtshow">
+			<label>文本数据</label>
+			<div id="divBackTxt" class="divtxt"></div>
+		</div>
+		<div class="alltxtshow">
+			<label>从区块链中查询返回的数据</label>
+			<div id="divAllData" class="divalltxt">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

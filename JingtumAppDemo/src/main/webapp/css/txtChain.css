@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+.txtshow{
+	display:block;
+	width: 100%;
+	height: 100px;
+}
+.txtshow .divtxt{
+	width:100%;
+	height: 80px;
+	border: 1px solid #0000FF;
+	word-break:break-all;
+}
+.alltxtshow{
+	display:block;
+	width: 100%;
+	height: 220px;
+}
+.alltxtshow .divalltxt{
+	width:100%;
+	height: 200px;
+	border: 1px solid #0000FF;
+	word-break:break-all;
+}

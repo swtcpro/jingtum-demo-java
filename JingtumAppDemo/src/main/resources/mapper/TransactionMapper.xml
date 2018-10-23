@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jingtum.chainApp.mapper.TransactionMapper">
+    <select id="selectTransaction" resultType="com.jingtum.chainApp.entity.ClientTransactionEntity">
+  		select  clientId    ,
+			payAddress      ,
+			toAddress       ,
+			currency        ,
+			currencyValue   ,
+			transactionType ,
+			memos          ,
+			payTime         ,
+			hash            ,
+			fee             ,
+			filePath          		
+  		from t_transaction where transactionType=#{transactionType}
+  			order by payTime
+   </select>
+</mapper>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.4.5/themes/default/easyui.css"/>
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.4.5/themes/icon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/imgChain.css"/>
+	<script type="text/javascript" src="jquery-easyui-1.5.4.5/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.5.4.5/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.5.4.5/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/spark-md5.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/plupload-2.1.2/js/plupload.full.min.js"></script>
+	<script type="text/javascript" src="js/upload_oss.js"></script>
+	<script type="text/javascript" src="js/imgChain.js"></script>
+</head>
+<body>
+	
+    <!-- 布局 -->
+    <div class="easyui-layout" fit="true">
+     	<div data-options="region:'north',border:true" style="height:150px;padding:5px 0px 0px 0px;float:left;">
+	 		&nbsp;&nbsp;&nbsp;&nbsp;
+	 		<div class="divfile">
+	 			<div class="divselfile">
+		            <input type="file" id="file"  class="ctlfile" accept="image/png,image/jpeg"/>
+		            <button id="btnImgFile" style="display:none;">图片文件</button>
+		            <div class="ctlmd5">
+		            	<span>MD5 hash:</span>
+		            	<input type="text" id="box" style="width:500px"/> 
+		            </div>
+		            <button id="btnTotrain" class="btntotrain">图片Hash值上链</button>
+	            </div>
+	            <div class="divimgshow">
+		            <div class="upimg-div" id="top1">		
+						<div class="upload-div">
+							<div id="ossfile" class="progress-div"></div>	
+							
+						</div>		
+					</div>	
+				</div>		
+	        </div>
+	 		
+	 	</div>
+	 	<div data-options="region:'center',border:false" style="padding-top:0px;">
+	 		<table id="gridTxt"></table>
+	 	</div>
+ 	</div>
+ 	
+	<div id="divShowData" class="easyui-window" title="区块链数据" data-options="modal:true,closed:true"
+		style="display:none;width:500px;height:400px;padding:5px;">
+		<div class="imgshow">
+			<div>
+				<label>区块链中的Hash值</label>
+				<input type="text" id="txtTrainHash" style="width:260px;"/>
+			</div>
+			<div id="divfilepath">
+				<label>区块链中的文件路径</label>
+				<input type="text" id="txtFilePath" style="width:260px;"/>
+			</div>
+			<div style="display:none;">
+				<label>当前图片计算Hash值</label> 
+				<input type="text" id="txtImgHash" style="width:260px;"/>
+			</div>
+		</div>
+		<div class="alldatashow">
+			<label>从区块链中查询返回的数据</label>
+			<div id="divAllData" class="divalldata">
+				
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
